@@ -1,0 +1,6 @@
+.idea
+.git
+.node_modules
+node_modules
+dist
+webpack.config.js
