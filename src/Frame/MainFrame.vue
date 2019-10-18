@@ -9,52 +9,21 @@
           <div class="topLogoText">Buling·后台</div>
         </div>
         <!--logo 结束-->
-
-        <!--应用名称 开始-->
-        <!--<div class="appName">
-          <el-dropdown placement="bottom">
-            <span class="appSelected">
-              <i class="hx hx-hx_yingyongfenleiqita appNameIcon"></i>
-            </span>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item disabled>我的应用</el-dropdown-item>
-              <el-dropdown-item v-for="(item,index) in config.application"
-                                :key="index"
-                                :divided="item.divided">
-
-                <div class="appItem" @click="gotoApplication(item.url)">
-                  <i :class='item.icon' class="appItem-icon" v-if="item.icon"></i>
-                  <div>{{item.title}}</div>
-                </div>
-              </el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-        </div>-->
-        <!--应用名称 结束-->
-
-        <!--当前项目名称-->
-        <div class="currentProjectName">一个基于vue的单页面多页签应用程序</div>
       </div>
 
       <!--顶部栏 右侧-->
       <div class="dsf">
-        <!--客户公司名称-->
-        <div class="projectName">客户公司名称</div>
         <!--用户信息-->
         <div class="userInfoWrap">
           <div class="userInfo">
             <el-dropdown placement="bottom">
-          <span class="mr10 dsf aic cfff">
-            <img src="@/Images/default.jpg" class="avatar">
-            张三丰
-            <i class="el-icon-arrow-down ml10"></i>
-          </span>
+              <span class="mr10 dsf aic cfff">
+                <img src="@/Images/default.jpg" class="avatar">
+                张三丰
+                <i class="el-icon-arrow-down ml10"></i>
+              </span>
               <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item >修改密码</el-dropdown-item>
-                <el-dropdown-item >基本信息</el-dropdown-item>
-                <el-dropdown-item >手机号绑定/解绑</el-dropdown-item>
-                <el-dropdown-item >操作日志</el-dropdown-item>
-                <el-dropdown-item >退出系统</el-dropdown-item>
+                <el-dropdown-item >退 出 系 统</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </div>
@@ -76,12 +45,14 @@
                 <span>{{item.title}}</span>
               </template>
               <el-menu-item-group>
-                <el-menu-item v-for="(subItem,subIndex) in item.sub"
-                              :key="subIndex"
-                              @click="openTab(subItem)"
-                              :index="subItem.menuId">
-                  {{subItem.title}}
-                </el-menu-item>
+                <template slot="title" v-for="(subItem,subIndex) in item.sub">
+                  <el-menu-item  v-if="subItem.show"
+                                :key="subIndex"
+                                @click="openTab(subItem)"
+                                :index="subItem.menuId">
+                      {{subItem.title}}
+                  </el-menu-item>
+                </template>
               </el-menu-item-group>
             </el-submenu>
 

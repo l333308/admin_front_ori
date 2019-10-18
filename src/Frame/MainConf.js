@@ -10,7 +10,8 @@ export default {
 				{
 					title: '品类管理',      // 菜单名称
 					component: 'category.index',    // 点击菜单打开的组件名称
-					menuId: 'category.index'           // 索引 (用于识别当前打开的tab,必须唯一，是字符串)
+					menuId: 'category.index',           // 索引 (用于识别当前打开的tab,必须唯一，是字符串)
+                    show: true
 				}
 			]
 		},
@@ -20,7 +21,7 @@ export default {
 			icon: 'el-icon-menu',
 			menuId: 'product',
 			sub: [
-				{title: '商品列表', component: 'product.index', menuId: 'product.index'},
+				{title: '商品列表', component: 'product.index', menuId: 'product.index', show: true},
 				{title: '商品详情', component: 'product.detail', menuId: 'product.detail'},
 				{title: '新增商品', component: 'product.add', menuId: 'product.add'},
 				{title: '编辑商品', component: 'product.edit', menuId: 'product.edit'},
@@ -32,7 +33,7 @@ export default {
 			icon: 'el-icon-document',
 			menuId: 'order',
 			sub: [
-				{title: '订单列表', component: 'order.index', menuId: 'order.index'},
+				{title: '订单列表', component: 'order.index', menuId: 'order.index', show: true},
 				{title: '订单详情', component: 'order.detail', menuId: 'order.detail'}
 			]
 		},
@@ -42,7 +43,7 @@ export default {
 			icon: 'el-icon-setting',
 			menuId: 'customer',
 			sub: [
-				{title: '客户列表', component: 'customer.index', menuId: 'customer.index'},
+				{title: '客户列表', component: 'customer.index', menuId: 'customer.index', show: true},
 				{title: '客户详情', component: 'customer.detail', menuId: 'customer.detail'}
 			]
 		},

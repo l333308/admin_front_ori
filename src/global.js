@@ -8,6 +8,9 @@ import DatetimeRangePicker from '@/components/DatetimeRangePicker'
 import SimpleSelector from '@/components/SimpleSelector'
 import RemoteSelector from '@/components/RemoteSelector'
 import RouterLink from '@/components/RouterLink'
+import ProductCategorySelector from '@/components/ProductCategorySelector'
+import SimpleInput from '@/components/SimpleInput'
+import SimpleFormItem from '@/components/SimpleFormItem'
 
 import request from './utils/request'
 
@@ -22,13 +25,17 @@ Vue.component('DatetimeRangePicker', DatetimeRangePicker)
 Vue.component('SimpleSelector', SimpleSelector)
 Vue.component('RemoteSelector', RemoteSelector)
 Vue.component('RouterLink', RouterLink)
+Vue.component('ProductCategorySelector', ProductCategorySelector)
+Vue.component('SimpleInput', SimpleInput)
+Vue.component('SimpleFormItem', SimpleFormItem)
 
 window.request = request
 Vue.mixin({
   methods: {
     // 是否有权限?
     can: function (permission) {
-      const permissions = this.$store.state.user.permissions
+        return true
+      const permissions = this.$store.state.user.permissions || {}
       return permissions.indexOf(permission) >= 0 || WhiteList.indexOf(permission) >= 0
     },
     search: function () {

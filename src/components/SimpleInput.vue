@@ -18,6 +18,7 @@
     },
     methods: {
       change: function(val) {
+          console.warn('simpleInput', val)
         this.$emit('change', val)
       }
     }

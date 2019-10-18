@@ -21,6 +21,7 @@
     },
     methods: {
       change: function(val) {
+          console.warn('simpleFormItem', val)
         this.$emit('change', val)
       }
     }

@@ -9,6 +9,9 @@ import TabRoute from '@/Router/TabRoute'
 import RouterMethods from '@/Router/RouterMethods'
 import Main from './MainFrame.vue'
 
+// icon
+import '../icons'
+
 // global component
 import '../global'
 
@@ -22,5 +25,11 @@ new Vue({
     data: {
         currentRoute: window.location.hash.split('?')[0] // 可能带参数
     },
-    render: v => v(index)
+    computed: {
+        ViewComponent () {
+            return Main
+        }
+    },
+    render (h) { return h(this.ViewComponent) }
+    //render: v => v(index)
 })

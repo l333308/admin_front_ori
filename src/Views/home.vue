@@ -1,6 +1,7 @@
 <template>
   <div class="wrap">
-    <h3>打开页签: this.$tab.open()</h3>
+    <h3>home.vue</h3>
+    <input type="button" value="打开商品列表" @click="goto">
     <pre>
       如果当前页签未打开过,则打开一个新的页签
       如果页签已存在,则跳转到当前页签.
@@ -33,7 +34,11 @@
       return {
       }
     },
-    methods: {},
+    methods: {
+      goto() {
+        this.$tab.open({title: '商品列表', component: 'product.index', menuId: 'product.index'})
+      }
+    },
     created() {
     },
   }
