@@ -1,5 +1,5 @@
 <template>
-    <el-input :placeholder="placeholder" clearable @change="change" :value="value" @keyup.enter.native="$emit('search')"/>
+    <el-input :placeholder="placeholder" clearable @input="change" :value="value" @keyup.enter.native="$emit('search')"/>
 </template>
 
 <script>

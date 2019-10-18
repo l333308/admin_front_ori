@@ -1,8 +1,7 @@
 <template>
   <div class="app-container" v-loading="loading">
-    <el-form :inline="true" ref="form" :model="query">
-      <simple-form-item v-model="query.keyword" @change="productName" placeholder="商品名称" @search="search"/>
-      <input placeholder="11111" @change="product11"/>
+    <el-form :inline="true" ref="form">
+      <simple-form-item v-model="query.keyword" label="" @search="search"/>
       <el-form-item label="">
         <product-category-selector v-model="query.categoryNo"/>
       </el-form-item>
@@ -68,6 +67,7 @@
   </div>
 </template>
 <script>
+import {EventBus} from '@/event-bus'
 export default {
     name: "product.index",
 	data () {
@@ -94,6 +94,9 @@ export default {
       },
       product11(val) {
           console.warn('product111', val)
+      },
+      onFocus1(val) {
+          console.warn('onFocus1', val)
       }
 	},
 	created () {
